@@ -3,7 +3,8 @@ import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("file:///Users/sallyhuang/SDTProject/vehicles_us.csv")
+#df = pd.read_csv("file:///Users/sallyhuang/SDTProject/vehicles_us.csv")
+df = pd.read_csv("/Users/sallyhuang/SDTProject/vehicles_us.csv")
 
 #header 
 
