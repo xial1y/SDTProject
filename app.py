@@ -8,6 +8,24 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("vehicles_us.csv")
 
 
+#data cleaning -- from notebook
+#cleaning is_4wd column
+df["is_4wd"].fillna(0, inplace= True) #filling directly the column in the dataframe
+df['is_4wd'] = df['is_4wd'].astype(bool) #converting
+
+#cleaning paint color column
+df['paint_color'].fillna('unknown', inplace=True)
+
+#filling cylinders column 
+df['cylinders'] = df[['cylinders', 'type']].groupby('type').transform(lambda x: x.fillna(x.median())) 
+
+#filling missing values for model year column 
+df['model_year'] = df[['model_year', 'type']].groupby('type').transform(lambda x: x.fillna(x.median())) 
+
+#filling in missing odometer values 
+df['odometer'] = df[['odometer', 'model_year']].groupby('model_year').transform(lambda x: x.fillna(x.mean()))
+
+
 #header 
 
 st.header('Used Vehicles for Sale')
