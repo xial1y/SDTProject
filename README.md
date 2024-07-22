@@ -1,4 +1,4 @@
-# SDTProject - project for Sprint 4 Software Development Tool
+# Software Development Tool Project
 This project is aimed at analyzing and visualizing the price distribution of used vehicles of different types and model years using a dataset of used cars for sale.
 
 Dataset
